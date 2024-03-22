@@ -11,7 +11,6 @@ const App = () => {
     const finalResult = stringifiedResult.concat(clickedButtonValue);
     setResult(finalResult);
   };
-
   const clear = () => {
     setResult("");
   };
