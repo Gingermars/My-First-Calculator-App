@@ -1,38 +1,118 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #103564e1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Calculator {
+  background-color: #222520;
+  width: 100%;
+  max-width: 400px;
+  min-height: 650px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-radius: 1.5rem;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+form {
+  background-color: #222520;
+  min-height: 200px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: #fff;
+  text-align: right;
+  flex: 1 1 0%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.keys .operator {
+  color: #eb6666;
+}
+
+.keys .brackets,
+.keys .percent {
+  color: #26fed7;
+}
+
+.keys {
+  background-color: #292d36;
+  padding: 1.5rem;
+  border-radius: 1.5rem 1.5rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  box-shadow: 0px -2px 16px rgba(0, 0, 0, 0.2);
+}
+
+.keys .key {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  padding: 35px;
+  background-color: #262933;
+  border-radius: 1rem;
+  transition: 0.2s;
+  user-select: none;
+}
+
+.keys .key button {
+  width: 100px;
+  background-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.keys .key:hover {
+  box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+.keys .key.operator button {
+  color: #eb6666;
+}
+
+.keys .key.action button {
+  color: #26fed7;
+}
+
+input {
+  font-size: 2rem;
+  height: 75px;
+  width: 350px;
+  background-color: #222520;
+  border: 0px;
+  color: #ffffff;
+  text-align: right;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+}
+
+#clear.key.action {
+  grid-column: span 2;
 }
